@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.3.11
+-- version 4.4.14
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2017 at 10:05 PM
--- Server version: 5.6.24
--- PHP Version: 5.6.8
+-- Generation Time: May 31, 2017 at 06:59 PM
+-- Server version: 5.6.26
+-- PHP Version: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `colleges`
@@ -363,10 +363,10 @@ INSERT INTO `registration` (`id`, `fathername`, `mothername`, `gender`, `occupat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `restrict`
+-- Table structure for table `restrict_subject`
 --
 
-CREATE TABLE IF NOT EXISTS `restrict` (
+CREATE TABLE IF NOT EXISTS `restrict_subject` (
   `id` int(10) NOT NULL,
   `course` varchar(30) NOT NULL,
   `semester` varchar(30) NOT NULL,
@@ -374,41 +374,15 @@ CREATE TABLE IF NOT EXISTS `restrict` (
   `subject1` varchar(30) NOT NULL,
   `subject2` varchar(30) NOT NULL,
   `created` varchar(30) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `restrict`
+-- Dumping data for table `restrict_subject`
 --
 
-INSERT INTO `restrict` (`id`, `course`, `semester`, `res_sub`, `subject1`, `subject2`, `created`) VALUES
-(26, '33', '1', '1 , 6', '1', '6', '1494474477'),
-(25, '33', '1', '1 , 5', '1', '5', '1494474477'),
-(24, '33', '1', '1 , 4', '1', '4', '1494474477'),
-(23, '33', '1', '4 , 5', '', '', '1494474477'),
-(22, '33', '1', '4 , 9', '', '', '1494474477'),
-(21, '33', '1', '4 , 6', '', '', '1494474477'),
-(20, '33', '1', '4 , 5', '', '', '1494474477'),
-(17, '30', '4', '5 , 6', '', '', '1494501297'),
-(19, '43', '1', 'Select Subject , Select Subjec', '', '', '1495086740'),
-(18, '31', '4', '11 , 12', '', '', '1494466046'),
-(14, '30', '1', '5 , 9', '', '', '1494466002'),
-(27, '33', '1', '1 , 9', '', '', '1494474477'),
-(28, '33', '1', '1 , 5', '', '', '1494474477'),
-(29, '33', '1', '4 , 4', '', '', '1494474477'),
-(30, '33', '1', '4 , 5', '', '', '1494474477'),
-(31, '33', '1', '4 , 6', '', '', '1494474477'),
-(32, '33', '1', '4 , 9', '', '', '1494474477'),
-(33, '33', '1', '4 , 5', '', '', '1494474477'),
-(34, '33', '1', '7 , 4', '', '', '1494474477'),
-(35, '33', '1', '7 , 5', '', '', '1494474477'),
-(36, '33', '1', '7 , 6', '', '', '1494474477'),
-(37, '33', '1', '7 , 9', '', '', '1494474477'),
-(38, '33', '1', '7 , 5', '', '', '1494474477'),
-(39, '33', '1', '7 , 4', '', '', '1494474477'),
-(40, '33', '1', '7 , 5', '', '', '1494474477'),
-(41, '33', '1', '7 , 6', '', '', '1494474477'),
-(42, '33', '1', '7 , 9', '', '', '1494474477'),
-(43, '33', '1', '7 , 5', '', '', '1494474477');
+INSERT INTO `restrict_subject` (`id`, `course`, `semester`, `res_sub`, `subject1`, `subject2`, `created`) VALUES
+(44, '43', '2', '', '33', '38', '1494474477'),
+(43, '43', '2', '', '53', '56', '1494474477');
 
 -- --------------------------------------------------------
 
@@ -570,56 +544,36 @@ CREATE TABLE IF NOT EXISTS `subjects` (
 INSERT INTO `subjects` (`id`, `type`, `subject`, `tbl_subjectmodifiable`, `course`, `semester`, `created`) VALUES
 (1, '1', 'eng', b'0', '34', '4', 'aa'),
 (4, '1', 'ncc', b'1', '34', '4', '08-05-17'),
-(5, 'Skill Enhancement Course(SEC)', 'gnm', b'0', '33', '5', '08-05-17'),
-(6, 'Skill Enhancement Course(SEC)', 'sss', b'0', '34', '1', '08-05-17'),
-(7, 'Skill Enhancement Course(SEC)', 'dg', b'0', '33', '3', '08-05-17'),
-(8, 'IEC', 'fbfbfb', b'0', '30', '4', '09-05-17'),
-(9, 'Skill Enhancement Course(SEC)', 'fgfg', b'0', '30', '4', '08-05-17'),
-(10, 'Skill Enhancement Course(SEC)', 'fbfbhffffffff', b'0', '32', '3', '08-05-17'),
-(11, 'Core Subjects', 'MECHANICAL', b'0', '32', '4', '08-05-17'),
-(12, 'Core Subjects', 'CSE', b'0', '32', '4', '08-05-17'),
-(13, '', 'CSE', b'1', '42', '4', '19-05-17'),
-(14, '', 'basubject25555', b'1', '43', '2', '19-05-17'),
-(15, 'Select', 'CSE77', b'1', '42', '4', '18-05-17'),
-(16, '', 'TESTING2', b'1', '43', '1', '19-05-17'),
-(20, 'IEC', 'comm2', b'1', '31', '4', '18-05-17'),
-(19, 'IEC', 'comm1', b'1', '31', '4', '18-05-17'),
-(21, 'Skill Enhancement Course(SEC)', 'phys sci1', b'1', '40', '3', '18-05-17'),
-(22, 'Skill Enhancement Course(SEC)', 'phys sci2', b'1', '40', '3', '18-05-17'),
-(23, 'Skill Enhancement Course(SEC)', 'phys sci1', b'1', '40', '6', '18-05-17'),
-(24, 'Skill Enhancement Course(SEC)', 'phys sci1', b'1', '40', '6', '18-05-17'),
-(25, 'Select', 'CSE77', b'1', '42', '4', '18-05-17'),
-(26, 'Core Subjects', 'CSE2', b'1', '42', '4', '18-05-17'),
+(5, '2', 'gnm', b'0', '33', '5', '08-05-17'),
+(6, '2', 'sss', b'0', '34', '1', '08-05-17'),
+(7, '2', 'dg', b'0', '33', '3', '08-05-17'),
+(8, '3', 'fbfbfb', b'0', '30', '4', '09-05-17'),
+(9, '2', 'fgfg', b'0', '30', '4', '08-05-17'),
+(10, '2', 'fbfbhffffffff', b'0', '32', '3', '08-05-17'),
+(11, '1', 'MECHANICAL', b'0', '32', '4', '08-05-17'),
+(12, '1', 'CSE', b'0', '32', '4', '08-05-17'),
+(20, '3', 'comm2', b'1', '31', '4', '18-05-17'),
+(19, '3', 'comm1', b'1', '31', '4', '18-05-17'),
+(21, '2', 'phys sci1', b'1', '40', '3', '18-05-17'),
+(22, '2', 'phys sci2', b'1', '40', '3', '18-05-17'),
+(23, '2', 'phys sci1', b'1', '40', '6', '18-05-17'),
+(24, '2', 'phys sci1', b'1', '40', '6', '18-05-17'),
+(26, '1', 'CSE2', b'1', '42', '4', '18-05-17'),
 (27, '2', 'ff', b'1', '42', '3', '18-05-17'),
 (28, '2', 'ss', b'1', '42', '3', '18-05-17'),
 (29, '2', 'ttt', b'1', '42', '3', '18-05-17'),
 (30, '2', 'may19_1', b'1', '42', '', '19-05-17'),
 (31, '2', 'may19_2', b'1', '42', '', '19-05-17'),
-(32, '1', 'aa', b'1', '43', '2', '19-05-17'),
-(33, '1', 'aa', b'1', '43', '2', '19-05-17'),
-(34, '1', 'aa', b'1', '43', '2', '19-05-17'),
-(35, '1', 'aa', b'1', '43', '2', '19-05-17'),
-(36, '1', 'aa', b'1', '43', '2', '19-05-17'),
-(37, '1', 'bb', b'1', '43', '2', '19-05-17'),
-(38, '1', 'bb', b'1', '43', '2', '19-05-17'),
-(39, '1', 'bb', b'1', '43', '2', '19-05-17'),
-(40, '1', 'bb', b'1', '43', '2', '19-05-17'),
-(41, '1', 'bb', b'1', '43', '2', '19-05-17'),
-(42, '1', 'ccc', b'1', '43', '2', '19-05-17'),
-(43, '1', 'ccc', b'1', '43', '2', '19-05-17'),
-(44, '1', 'ccc', b'1', '43', '2', '19-05-17'),
-(45, '1', 'ccc', b'1', '43', '2', '19-05-17'),
-(46, '1', 'ccc', b'1', '43', '2', '19-05-17'),
-(47, '1', 'dd', b'1', '43', '2', '19-05-17'),
-(48, '1', 'dd', b'1', '43', '2', '19-05-17'),
-(49, '1', 'dd', b'1', '43', '2', '19-05-17'),
-(50, '1', 'dd', b'1', '43', '2', '19-05-17'),
-(51, '1', 'dd', b'1', '43', '2', '19-05-17'),
-(52, '1', 'ee', b'1', '43', '2', '19-05-17'),
-(53, '1', 'ee', b'1', '43', '2', '19-05-17'),
-(54, '1', 'ee', b'1', '43', '2', '19-05-17'),
-(55, '1', 'ee', b'1', '43', '2', '19-05-17'),
-(56, '1', 'ee', b'1', '43', '2', '19-05-17'),
+(32, '1', 'aa', b'0', '43', '2', '19-05-17'),
+(33, '1', 'one', b'1', '43', '2', '19-05-17'),
+(37, '1', 'bb', b'0', '43', '2', '19-05-17'),
+(38, '1', 'two', b'1', '43', '2', '19-05-17'),
+(42, '1', 'ccc', b'0', '43', '2', '19-05-17'),
+(43, '1', 'three', b'1', '43', '2', '19-05-17'),
+(48, '1', 'dd', b'0', '43', '2', '19-05-17'),
+(49, '1', 'four', b'1', '43', '2', '19-05-17'),
+(53, '1', 'five', b'1', '43', '2', '19-05-17'),
+(56, '1', 'six', b'1', '43', '2', '19-05-17'),
 (57, '2', 'we', b'1', '43', '2', '19-05-17'),
 (58, '2', 'we', b'1', '43', '2', '19-05-17'),
 (59, '2', 'we', b'1', '43', '2', '19-05-17'),
@@ -695,36 +649,36 @@ INSERT INTO `subjects` (`id`, `type`, `subject`, `tbl_subjectmodifiable`, `cours
 (129, '2', 'lifescience5', b'0', '44', '4', '19-05-17'),
 (130, '2', 'lifescience6', b'0', '44', '4', '19-05-17'),
 (131, '2', 'lifescience7', b'0', '44', '4', '19-05-17'),
-(132, 'Skill Enhancement Course(SEC)', 'lifescience1', b'0', '44', '4', '19-05-17'),
-(133, 'Skill Enhancement Course(SEC)', 'lifescience2', b'0', '44', '4', '19-05-17'),
-(134, 'Skill Enhancement Course(SEC)', 'lifescience3', b'0', '44', '4', '19-05-17'),
-(135, 'Skill Enhancement Course(SEC)', 'lifescience4', b'0', '44', '4', '19-05-17'),
-(136, 'Skill Enhancement Course(SEC)', 'lifescience5', b'0', '44', '4', '19-05-17'),
-(137, 'Skill Enhancement Course(SEC)', 'lifescience6', b'0', '44', '4', '19-05-17'),
-(138, 'Skill Enhancement Course(SEC)', 'lifescience7', b'0', '44', '4', '19-05-17'),
-(139, 'Skill Enhancement Course(SEC)', 'lifescience1', b'1', '44', '3', '19-05-17'),
-(140, 'Skill Enhancement Course(SEC)', 'lifescience2', b'1', '44', '3', '19-05-17'),
-(141, 'Skill Enhancement Course(SEC)', 'lifescience3', b'1', '44', '3', '19-05-17'),
-(142, 'Skill Enhancement Course(SEC)', 'lifescience4', b'1', '44', '3', '19-05-17'),
-(143, 'Skill Enhancement Course(SEC)', 'lifescience5', b'1', '44', '3', '19-05-17'),
-(144, 'Skill Enhancement Course(SEC)', 'lifescience6', b'1', '44', '3', '19-05-17'),
-(145, 'Skill Enhancement Course(SEC)', 'lifescience7', b'1', '44', '3', '19-05-17'),
-(146, 'Skill Enhancement Course(SEC)', 'lifescience1', b'1', '44', '3', '19-05-17'),
-(147, 'Skill Enhancement Course(SEC)', 'lifescience2', b'1', '44', '3', '19-05-17'),
-(148, 'Skill Enhancement Course(SEC)', 'lifescience3', b'1', '44', '3', '19-05-17'),
-(149, 'Skill Enhancement Course(SEC)', 'lifescience1', b'1', '44', '3', '19-05-17'),
-(150, 'Skill Enhancement Course(SEC)', 'lifescience2', b'1', '44', '3', '19-05-17'),
-(151, 'Skill Enhancement Course(SEC)', 'lifescience3', b'1', '44', '3', '19-05-17'),
-(152, 'Skill Enhancement Course(SEC)', 'lifescience4', b'1', '44', '3', '19-05-17'),
-(153, 'Skill Enhancement Course(SEC)', 'lifescience5', b'1', '44', '3', '19-05-17'),
-(154, 'Skill Enhancement Course(SEC)', 'lifescience6', b'1', '44', '3', '19-05-17'),
-(155, 'Skill Enhancement Course(SEC)', 'lifescience7', b'1', '44', '3', '19-05-17'),
-(156, 'Skill Enhancement Course(SEC)', 'lifescience2', b'0', '44', '3', '19-05-17'),
-(157, 'Skill Enhancement Course(SEC)', 'lifescience2', b'0', '44', '3', '19-05-17'),
-(158, 'Skill Enhancement Course(SEC)', 'lifescience4', b'0', '44', '3', '19-05-17'),
-(159, 'Skill Enhancement Course(SEC)', 'lifescience2', b'0', '44', '3', '19-05-17'),
-(160, 'Skill Enhancement Course(SEC)', 'lifescience2', b'0', '44', '3', '19-05-17'),
-(161, 'Skill Enhancement Course(SEC)', 'lifescience2', b'0', '44', '3', '19-05-17'),
+(132, '2', 'lifescience1', b'0', '44', '4', '19-05-17'),
+(133, '2', 'lifescience2', b'0', '44', '4', '19-05-17'),
+(134, '2', 'lifescience3', b'0', '44', '4', '19-05-17'),
+(135, '2', 'lifescience4', b'0', '44', '4', '19-05-17'),
+(136, '2', 'lifescience5', b'0', '44', '4', '19-05-17'),
+(137, '2', 'lifescience6', b'0', '44', '4', '19-05-17'),
+(138, '2', 'lifescience7', b'0', '44', '4', '19-05-17'),
+(139, '2', 'lifescience1', b'1', '44', '3', '19-05-17'),
+(140, '2', 'lifescience2', b'1', '44', '3', '19-05-17'),
+(141, '2', 'lifescience3', b'1', '44', '3', '19-05-17'),
+(142, '2', 'lifescience4', b'1', '44', '3', '19-05-17'),
+(143, '2', 'lifescience5', b'1', '44', '3', '19-05-17'),
+(144, '2', 'lifescience6', b'1', '44', '3', '19-05-17'),
+(145, '2', 'lifescience7', b'1', '44', '3', '19-05-17'),
+(146, '2', 'lifescience1', b'1', '44', '3', '19-05-17'),
+(147, '2', 'lifescience2', b'1', '44', '3', '19-05-17'),
+(148, '2', 'lifescience3', b'1', '44', '3', '19-05-17'),
+(149, '2', 'lifescience1', b'1', '44', '3', '19-05-17'),
+(150, '2', 'lifescience2', b'1', '44', '3', '19-05-17'),
+(151, '2', 'lifescience3', b'1', '44', '3', '19-05-17'),
+(152, '2', 'lifescience4', b'1', '44', '3', '19-05-17'),
+(153, '2', 'lifescience5', b'1', '44', '3', '19-05-17'),
+(154, '2', 'lifescience6', b'1', '44', '3', '19-05-17'),
+(155, '2', 'lifescience7', b'1', '44', '3', '19-05-17'),
+(156, '2', 'lifescience2', b'0', '44', '3', '19-05-17'),
+(157, '2', 'lifescience2', b'0', '44', '3', '19-05-17'),
+(158, '2', 'lifescience4', b'0', '44', '3', '19-05-17'),
+(159, '2', 'lifescience2', b'0', '44', '3', '19-05-17'),
+(160, '2', 'lifescience2', b'0', '44', '3', '19-05-17'),
+(161, '2', 'lifescience2', b'0', '44', '3', '19-05-17'),
 (162, '2', 'lifescience2', b'1', '44', '3', '19-05-17'),
 (163, '2', 'lifescience4', b'1', '44', '3', '19-05-17'),
 (164, '2', 'phys sci2', b'1', '44', '3', '19-05-17'),
@@ -735,14 +689,14 @@ INSERT INTO `subjects` (`id`, `type`, `subject`, `tbl_subjectmodifiable`, `cours
 (169, '2', 'crime3', b'1', '49', '1', '19-05-17'),
 (170, '2', 'crime4', b'1', '49', '1', '19-05-17'),
 (171, '2', 'crime5', b'1', '49', '1', '19-05-17'),
-(172, 'Skill Enhancement Course(SEC)', 'crime1', b'0', '49', '6', '19-05-17'),
-(173, 'Skill Enhancement Course(SEC)', 'crime1', b'0', '49', '6', '19-05-17'),
-(174, 'Skill Enhancement Course(SEC)', 'crime1', b'0', '49', '6', '19-05-17'),
-(175, 'Skill Enhancement Course(SEC)', 'crime1', b'0', '49', '3', '19-05-17'),
-(176, 'Skill Enhancement Course(SEC)', 'crime2', b'0', '49', '3', '19-05-17'),
-(177, 'Skill Enhancement Course(SEC)', 'crime3', b'0', '49', '3', '19-05-17'),
-(178, 'Skill Enhancement Course(SEC)', 'crime1', b'1', '49', '1', '19-05-17'),
-(179, 'Skill Enhancement Course(SEC)', 'crime2', b'1', '49', '1', '19-05-17'),
+(172, '2', 'crime1', b'0', '49', '6', '19-05-17'),
+(173, '2', 'crime1', b'0', '49', '6', '19-05-17'),
+(174, '2', 'crime1', b'0', '49', '6', '19-05-17'),
+(175, '2', 'crime1', b'0', '49', '3', '19-05-17'),
+(176, '2', 'crime2', b'0', '49', '3', '19-05-17'),
+(177, '2', 'crime3', b'0', '49', '3', '19-05-17'),
+(178, '2', 'crime1', b'1', '49', '1', '19-05-17'),
+(179, '2', 'crime2', b'1', '49', '1', '19-05-17'),
 (180, '2', 'crime1', b'1', '49', '2', '19-05-17'),
 (181, '2', 'crime3', b'1', '49', '2', '19-05-17'),
 (182, '2', 'crime2', b'1', '49', '3', '19-05-17'),
@@ -825,9 +779,9 @@ ALTER TABLE `registration`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `restrict`
+-- Indexes for table `restrict_subject`
 --
-ALTER TABLE `restrict`
+ALTER TABLE `restrict_subject`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -937,10 +891,10 @@ ALTER TABLE `mastersubjectmodifiable`
 ALTER TABLE `registration`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT for table `restrict`
+-- AUTO_INCREMENT for table `restrict_subject`
 --
-ALTER TABLE `restrict`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=44;
+ALTER TABLE `restrict_subject`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT for table `studcourse`
 --
